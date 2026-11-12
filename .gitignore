@@ -1,1 +1,4 @@
 Kloud_Kart_Situation_Diagnosis.pdf
+ADR-002_Cloud_Managed_Data_Warehouse.md
+ADR-004_Incremental_Data_Loading.md
+ADR-003_Scheduled_Batch_Processing.md
