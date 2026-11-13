@@ -2,13 +2,13 @@
 
 ## 1. Proposed Improvement
 
-I propose building a Data Strategy Implementation Tracker for Kloud Kart.
+I propose building a data strategy implementation tracker for Kloud Kart.
 
 The proposed 12-month data strategy gives Kloud Kart a direction and a roadmap. However, Nana will still need a practical way to monitor implementation, follow up on responsibilities, identify delays and communicate progress to management.
 
 The tracker will turn the written roadmap into an interactive management tool.
 
-## 2. What the Tool Will Do
+## 2. What the tracker will do
 
 The tracker will provide Nana with a central place to monitor the progress of the data strategy.
 
@@ -33,7 +33,7 @@ It will give her better visibility into:
 - Whether implementation costs are staying within expectations.
 - What progress can be communicated to the board.
 
-It should also reduce the effort required to gather updates from different people before management meetings.
+**Estimated time saving:** Assuming Nana and colleagues currently spend about two staff-hours each week collecting and consolidating updates, and the tracker cuts that effort roughly in half, it could save about one staff-hour per week, or approximately 50 hours over a 50-week year. This is a planning estimate, not a measured result; I would validate the baseline and actual saving during a pilot. I have not estimated a monetary saving because salary rates are not available.
 
 ## 4. Why This Goes Beyond the Brief
 

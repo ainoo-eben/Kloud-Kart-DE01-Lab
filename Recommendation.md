@@ -4,7 +4,7 @@ A summary of the recommended data strategy for Kloud Kart, a three-year-old e-co
 
 ## Overview
 
-The recommendation is to build a reliable data foundation first, rather than invest immediately in complex real-time analytics or machine learning.
+I recommend building a reliable data foundation first, rather than investing immediately in complex real-time analytics or machine learning.
 
 The proposed approach will:
 
@@ -30,29 +30,28 @@ Production MySQL → Read Replica → Data Pipeline → Data Warehouse → Repor
 ## Key Recommendations
 
 ### 1. Separate reporting from production
-- Introduce a MySQL read replica.
-- The pipeline extracts from the replica, not from the live database.
-- Monitor replication health and lag so delayed data is caught before reports are published.
+- I recommend introducing a MySQL read replica.
+- I recommend extracting data from the replica, not the live database.
+- I recommend monitoring replication health and lag so delayed data is caught before reports are published.
 
 ### 2. Use a cloud-managed data warehouse
-- Evaluate Amazon Redshift and Google BigQuery before choosing a provider.
-- Decide based on cost, integration, security, data location and the team's ability to manage the service.
-- A managed service is preferred because the company has limited technical capacity.
+- I will evaluate Amazon Redshift and Google BigQuery based on cost, integration, security, data location and the team's ability to manage the service.
+- I recommend a managed service because the company has limited technical capacity.
 
 ### 3. Load data incrementally
-- Do one full load of historical data, then incremental loads for daily operations.
-- Capture new and modified records, prevent duplicates, validate loaded data and record successful or failed runs.
-- Only advance the processing watermark after a successful load and validation.
-- Refresh most management reports daily, and show the last successful refresh time on each report.
+- I recommend an initial full load of historical data, followed by incremental loads for daily operations.
+- The pipeline should capture new and modified records, prevent duplicates, validate loaded data and record successful or failed runs.
+- The processing watermark should advance only after a successful load and validation.
+- I recommend refreshing most management reports daily and showing the last successful refresh time on each report.
 
 ### 4. Keep inventory management operational
-- Stock availability checks, reservations and updates stay in the operational application and primary database.
-- The warehouse supports inventory analysis and reporting only. It must not decide whether a customer can buy available stock.
-- Company-wide real-time reporting is not recommended.
+- I recommend keeping stock availability checks, reservations and updates in the operational application and primary database.
+- I recommend limiting the warehouse to inventory analysis and reporting; it should not decide whether a customer can buy available stock.
+- I do not recommend company-wide real-time reporting.
 
 ## Data Governance and Compliance
 
-Kloud Kart needs to improve how it tracks, protects, retains and deletes customer information. Recommended actions:
+I recommend that Kloud Kart improve how it tracks, protects, retains and deletes customer information:
 
 - Maintain an inventory of systems and locations holding customer data, including exported spreadsheets
 - Introduce role-based access controls
@@ -60,14 +59,14 @@ Kloud Kart needs to improve how it tracks, protects, retains and deletes custome
 - Assign ownership and responsibility for important datasets
 - Document data access and deletion activities
 
-These controls should support compliance with Ghana's Data Protection Act, 2012 (Act 843). The existing customer data complaint should be prioritised, with appropriate privacy or legal support.
+These controls should support compliance with Ghana's Data Protection Act, 2012 (Act 843). I recommend prioritising the existing customer data complaint and seeking appropriate privacy or legal support.
 
 ## Reporting Consistency
 
-A warehouse alone will not fix the disagreement between Finance and Operations. Both teams must agree on shared definitions.
+A warehouse alone will not fix the disagreement between Finance and Operations. I recommend that both teams agree on shared definitions.
 
-- Nana coordinates Finance and Operations to define: **orders placed**, **orders paid**, **orders shipped** and **revenue reported**.
-- The data team implements these definitions centrally so both departments use the same figures.
+- I recommend that Nana coordinate Finance and Operations to define **orders placed**, **orders paid**, **orders shipped** and **revenue reported**.
+- I recommend that the data team implement these definitions centrally so both departments use the same figures.
 
 ## Hiring Plan
 
@@ -76,7 +75,7 @@ A warehouse alone will not fix the disagreement between Finance and Operations. 
 | 1st hire | **Data Engineer** | Set up and monitor the read replica; build extraction and loading pipelines; establish the warehouse; implement data validation and pipeline monitoring; secure data movement and access |
 | 2nd hire | **Analytics Engineer** | Agree metric definitions with Finance and Operations; transform data into reliable reporting datasets; build shared reporting models and dashboards; maintain reporting logic and support Nana's information needs |
 
-A Data Scientist is not a priority at this stage. Demand forecasting should come after reliable historical data and consistent business measures exist.
+I do not recommend hiring a Data Scientist at this stage. I recommend pursuing demand forecasting only after reliable historical data and consistent business measures are in place.
 
 ## Cost and Investment Considerations
 
@@ -89,24 +88,24 @@ A Data Scientist is not a priority at this stage. Demand forecasting should come
 | Staffing | Two data professionals |
 | Governance | Security, monitoring and privacy support |
 
-A reliable total cost cannot be given without actual infrastructure requirements, provider pricing and salary information. Before committing to a provider:
+I cannot provide a reliable total cost without actual infrastructure requirements, provider pricing and salary information. Before committing to a provider, I recommend that Kloud Kart:
 
-- Compare expected monthly operating costs
-- Test the architecture with representative data
-- Set up budget alerts and usage monitoring
+- Compare expected monthly operating costs.
+- Test the architecture with representative data.
+- Set up budget alerts and usage monitoring.
 
 ## What Is Postponed
 
 | Item | Reason |
 |---|---|
-| Company-wide real-time dashboards | Most management reports can refresh daily. Near-real-time should only be added where a specific business need justifies it. |
+| Company-wide real-time dashboards | Most management reports can refresh daily. I recommend adding near-real-time reporting only where a specific business need justifies it. |
 | Lakehouse or large data lake | Immediate needs centre on structured transactional data and reporting. |
-| Machine-learning forecasting | Should follow reliable historical data and consistent reporting. |
+| Machine-learning forecasting | I recommend pursuing it only after reliable historical data and consistent reporting are in place. |
 
-These can be reconsidered as the business grows and its requirements become clearer.
+I would reconsider these as the business grows and its requirements become clearer.
 
 ## Conclusion
 
-Prioritise a reliable data foundation built around a read replica, a cloud-managed warehouse and scheduled data pipelines. This addresses website performance, inconsistent reporting and uncontrolled customer data copies, while respecting the company's budget and limited technical capacity.
+I recommend prioritising a reliable data foundation built around a read replica, a cloud-managed warehouse and scheduled data pipelines. This would address website performance, inconsistent reporting and uncontrolled customer data copies while respecting the company's budget and limited technical capacity.
 
-Solve the current data problems first, and expand into advanced analytics only when the business has a clear need and the capacity to support it.
+I recommend solving the current data problems first and expanding into advanced analytics only when the business has a clear need and the capacity to support it.

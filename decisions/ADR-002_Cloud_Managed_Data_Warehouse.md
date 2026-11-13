@@ -2,7 +2,8 @@
 
 - **Status:** Proposed
 - **Date:** 2026-11-12
-- **Decision owner:** Kloud Kart Management (approval required)
+- **Decision owner:** Ebenezer Ainoo
+- **Approval:** Kloud Kart Management (required)
 
 ## Context
 
